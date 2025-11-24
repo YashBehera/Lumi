@@ -1,0 +1,348 @@
+/* LandingPage Component Specific Styles */
+
+/* Hero Section Animations */
+.hero-section {
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hero Image Parallax Effect */
+  .hero-image {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .hero-image:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Staggered Animation for Feature Cards */
+  .feature-card:nth-child(1) {
+    animation: slideInUp 0.6s ease-out 0.1s both;
+  }
+  
+  .feature-card:nth-child(2) {
+    animation: slideInUp 0.6s ease-out 0.2s both;
+  }
+  
+  .feature-card:nth-child(3) {
+    animation: slideInUp 0.6s ease-out 0.3s both;
+  }
+  
+  .feature-card:nth-child(4) {
+    animation: slideInUp 0.6s ease-out 0.4s both;
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Logo Animation */
+  .logo-grid img {
+    transition: all 0.3s ease;
+    opacity: 0.6;
+  }
+  
+  .logo-grid img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  /* Step Number Circle Animation */
+  .step-circle {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .step-circle::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(72, 143, 229, 0.3), rgba(53, 122, 189, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .step-circle:hover::before {
+    opacity: 1;
+  }
+  
+  .step-circle:hover {
+    transform: scale(1.1);
+  }
+  
+  /* CTA Section Gradient Background */
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(72, 143, 229, 0.05) 0%,
+      transparent 70%
+    );
+    animation: pulse 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  /* Button Hover Effects */
+  .btn-primary-enhanced {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .btn-primary-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+  
+  .btn-primary-enhanced:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Navigation Scroll Effect */
+  .nav-header {
+    transition: all 0.3s ease;
+  }
+  
+  .nav-header.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: rgba(246, 247, 248, 0.95);
+    backdrop-filter: blur(10px);
+  }
+  
+  .dark .nav-header.scrolled {
+    background: rgba(18, 25, 33, 0.95);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon Bounce Animation */
+  .feature-icon {
+    animation: iconBounce 2s ease-in-out infinite;
+  }
+  
+  @keyframes iconBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .feature-card:hover .feature-icon {
+    animation: none;
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Gradient Text Effect */
+  .gradient-text {
+    background: linear-gradient(135deg, #488fe5 0%, #357abd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Section Fade In on Scroll */
+  .section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Footer Links Underline Effect */
+  .footer-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #488fe5;
+    transition: width 0.3s ease;
+  }
+  
+  .footer-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Mobile Menu Animation */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+  
+  /* Loading Spinner for Async Actions */
+  .spinner {
+    border: 3px solid rgba(72, 143, 229, 0.2);
+    border-top-color: #488fe5;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Tooltip Styles */
+  .tooltip {
+    position: relative;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 8px 12px;
+    background: #1a2332;
+    color: white;
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tooltip:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Accessibility: Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .btn-primary {
+      border: 2px solid currentColor;
+    }
+    
+    .feature-card {
+      border-width: 2px;
+    }
+  }
+  
+  /* Dark Mode Specific Adjustments */
+  .dark .hero-image {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  }
+  
+  .dark .feature-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Skeleton Loading State */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      rgba(200, 200, 200, 0.1) 25%,
+      rgba(200, 200, 200, 0.2) 50%,
+      rgba(200, 200, 200, 0.1) 75%
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }

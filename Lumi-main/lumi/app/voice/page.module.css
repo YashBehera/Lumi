@@ -1,0 +1,49 @@
+/* page.module.css */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00c6ff, #0072ff, #6a11cb);; /* Tech gradient */
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Optional: Animated gradient for smooth color movement */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #6a11cb 60%);
+  box-shadow: 0 0 30px rgba(106, 17, 203, 0.6);
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(106, 17, 203, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(106, 17, 203, 0.4);
+  }
+}
